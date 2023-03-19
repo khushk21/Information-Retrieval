@@ -1,0 +1,161 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="welcome-area" id="welcome">
+  <div class="header-text">
+    <div class="container">
+      <div class="row">
+        <div
+          class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12"
+        >
+          <h1><strong>AMAZON</strong></h1>
+        </div>
+        <div class="banner">
+          <div class="col-md-12">
+            <div class="submit-form">
+              <form
+                id="form-submit"
+                name="search"
+                action="/searchResults"
+                method="get"
+              >
+                <div class="row">
+                  <div class="col-md-6 second-item">
+                    <fieldset>
+                      <input
+                        name="search"
+                        type="text"
+                        class="form-control"
+                        id="product_title"
+                        placeholder="Search Product Title..."
+                        required=""
+                      />
+                    </fieldset>
+                  </div>
+
+                  <div class="col-md-6 second-item">
+                    <fieldset>
+                      <input
+                        name="description"
+                        type="text"
+                        class="form-control"
+                        id="description"
+                        placeholder="Product Description..."
+                      />
+                    </fieldset>
+                  </div>
+                  <div class="col-md-3 second-item">
+                    <fieldset for="category">
+                      <select
+                        name="category"
+                        id="category"
+                        aria-label="Default select example"
+                      >
+                        <option value="">Select a Category</option>
+                        <option value="DIY_Tools">DIY & Tools</option>
+                        <option value="Office Products">Office Products</option>
+                        <option value="Sports Apparel_Equipment">
+                          Sports Apparel & Equipment
+                        </option>
+                        <option value="Womens Fashion">Women's Fashion</option>
+                        <option value="Kitchen & Dining">
+                          Kitchen & Dining
+                        </option>
+                      </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-3 second-item">
+                    <fieldset for="rating">
+                      <select
+                        name="rating"
+                        id="rating"
+                        aria-label="Default select example"
+                      >
+                        <option value="">Select a Rating Value</option>
+                        <option value="1">1 star</option>
+                        <option value="2">2 stars</option>
+                        <option value="3">3 stars</option>
+                        <option value="4">4 stars</option>
+                        <option value="5">5 stars</option>
+                      </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-3">
+                    <fieldset>
+                      <button type="submit" id="search" class="btn">
+                        <i class="material-icons">search</i>
+                        Search Now
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+                <div
+                  class="blue-button"
+                  id="form-submit"
+                  name="search"
+                  action="/searchResults"
+                  method="get"
+                >
+                  {% if suggestions %} Did you mean
+                  <a
+                    href="/searchResults?search={{suggestions[0].word}}&{{countries}}"
+                  >
+                    {{suggestions[0].word}}</a
+                  >
+                  {% endif %}
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Header Text End ***** -->
+</div>
+<section class="featured-places" id="search_results">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <span>Search Results for query</span>
+        </div>
+      </div>
+    </div>
+    {% if products%} {% for product in products %}
+    <div
+      style="
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        padding: 10px;
+      "
+    >
+      <img
+        src="https://via.placeholder.com/150x150"
+        alt="Product Image"
+        style="margin-right: 10px"
+      />
+      <div style="flex: 1">
+        <h3 style="font-size: 20px; margin: 0">Product Title</h3>
+        <p style="color: #666">Product Description</p>
+        <div style="margin-top: 10px">
+          <h4 style="font-size: 16px; margin: 0">Customer Reviews:</h4>
+          <ul style="list-style: none; margin: 0; padding: 0">
+            <li style="margin-bottom: 5px">Review 1</li>
+            <li style="margin-bottom: 5px">Review 2</li>
+            <li style="margin-bottom: 5px">Review 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %} {% else %}
+    <div>{{error}}</div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ***** Search Result Area End ***** -->
+{% endblock %}
