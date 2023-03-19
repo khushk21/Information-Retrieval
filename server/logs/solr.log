@@ -1,0 +1,108 @@
+2023-03-19 07:09:59.074 INFO  (main) [   ] o.e.j.u.log Logging initialized @979ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-03-19 07:09:59.247 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 19.0.2+7-44
+2023-03-19 07:09:59.255 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Program%20Files/solr-8.11.2/server/contexts/] at interval 0
+2023-03-19 07:09:59.632 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2023-03-19 07:09:59.641 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2023-03-19 07:09:59.641 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2023-03-19 07:09:59.642 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 600000ms
+2023-03-19 07:09:59.677 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2023-03-19 07:09:59.680 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.11.2
+2023-03-19 07:09:59.680 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2023-03-19 07:09:59.680 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Program Files\solr-8.11.2
+2023-03-19 07:09:59.681 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2023-03-19T07:09:59.680887700Z
+2023-03-19 07:09:59.687 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Program Files\solr-8.11.2\server\solr
+2023-03-19 07:09:59.687 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Program Files\solr-8.11.2\server\solr\solr.xml
+2023-03-19 07:09:59.741 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@565f390, but no JMX reporters were configured - adding default JMX reporter.
+2023-03-19 07:10:00.080 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2023-03-19 07:10:00.207 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@aa4d8cc[provider=null,keyStore=null,trustStore=null]
+2023-03-19 07:10:00.207 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@aa4d8cc[provider=null,keyStore=null,trustStore=null]
+2023-03-19 07:10:00.285 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@70887727[provider=null,keyStore=null,trustStore=null]
+2023-03-19 07:10:00.285 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@70887727[provider=null,keyStore=null,trustStore=null]
+2023-03-19 07:10:00.319 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2023-03-19 07:10:00.397 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient core cache for max 2147483647 cores with initial capacity of 1024
+2023-03-19 07:10:00.407 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2023-03-19 07:10:00.446 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@565f390
+2023-03-19 07:10:00.446 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@565f390
+2023-03-19 07:10:00.447 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@565f390
+2023-03-19 07:10:00.474 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 2 core definitions underneath C:\Program Files\solr-8.11.2\server\solr
+2023-03-19 07:10:00.474 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [Combined, Combined_reviews]
+2023-03-19 07:10:00.498 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.11.2
+2023-03-19 07:10:00.498 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.11.2
+2023-03-19 07:10:00.520 WARN  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.c.SolrConfig solrconfig.xml: <jmx> is no longer supported, use solr.xml:/metrics/reporter section instead
+2023-03-19 07:10:00.520 WARN  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.c.SolrConfig solrconfig.xml: <jmx> is no longer supported, use solr.xml:/metrics/reporter section instead
+2023-03-19 07:10:00.558 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.s.IndexSchema Schema name=default-config
+2023-03-19 07:10:00.560 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.s.IndexSchema Schema name=default-config
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2023-03-19 07:10:00.756 WARN  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2023-03-19 07:10:00.905 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2023-03-19 07:10:00.905 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2023-03-19 07:10:00.915 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@8a589a2{/solr,file:///C:/Program%20Files/solr-8.11.2/server/solr-webapp/webapp/,AVAILABLE}{C:\Program Files\solr-8.11.2\server/solr-webapp/webapp}
+2023-03-19 07:10:00.932 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@58ebfd03{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2023-03-19 07:10:00.932 INFO  (main) [   ] o.e.j.s.Server Started @2838ms
+2023-03-19 07:10:00.954 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.c.CoreContainer Creating SolrCore 'Combined' using configuration from instancedir C:\Program Files\solr-8.11.2\server\solr\Combined, trusted=true
+2023-03-19 07:10:00.954 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.c.CoreContainer Creating SolrCore 'Combined_reviews' using configuration from instancedir C:\Program Files\solr-8.11.2\server\solr\Combined_reviews, trusted=true
+2023-03-19 07:10:00.972 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.Combined' (registry 'solr.core.Combined') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@565f390
+2023-03-19 07:10:00.972 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.Combined_reviews' (registry 'solr.core.Combined_reviews') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@565f390
+2023-03-19 07:10:00.981 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.c.SolrCore [[Combined_reviews] ] Opening new SolrCore at [C:\Program Files\solr-8.11.2\server\solr\Combined_reviews], dataDir=[C:\Program Files\solr-8.11.2\server\solr\Combined_reviews\data\]
+2023-03-19 07:10:00.981 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.c.SolrCore [[Combined] ] Opening new SolrCore at [C:\Program Files\solr-8.11.2\server\solr\Combined], dataDir=[C:\Program Files\solr-8.11.2\server\solr\Combined\data\]
+2023-03-19 07:10:01.488 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2023-03-19 07:10:01.488 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2023-03-19 07:10:01.488 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2023-03-19 07:10:01.488 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2023-03-19 07:10:01.508 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2023-03-19 07:10:01.508 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2023-03-19 07:10:01.508 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2023-03-19 07:10:01.508 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2023-03-19 07:10:01.691 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Program Files\solr-8.11.2\server\solr\Combined_reviews\conf
+2023-03-19 07:10:01.691 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Program Files\solr-8.11.2\server\solr\Combined\conf
+2023-03-19 07:10:01.698 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2023-03-19 07:10:01.698 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2023-03-19 07:10:01.701 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxQueryFrequency=0.01,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4}
+2023-03-19 07:10:01.701 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxQueryFrequency=0.01,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4}
+2023-03-19 07:10:01.706 INFO  (coreLoadExecutor-13-thread-2) [   x:Combined_reviews] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2023-03-19 07:10:01.706 INFO  (coreLoadExecutor-13-thread-1) [   x:Combined] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2023-03-19 07:10:01.716 INFO  (searcherExecutor-16-thread-1-processing-x:Combined) [   x:Combined] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-19 07:10:01.717 INFO  (searcherExecutor-16-thread-1-processing-x:Combined) [   x:Combined] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2023-03-19 07:10:01.717 INFO  (searcherExecutor-17-thread-1-processing-x:Combined_reviews) [   x:Combined_reviews] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-19 07:10:01.717 INFO  (searcherExecutor-17-thread-1-processing-x:Combined_reviews) [   x:Combined_reviews] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2023-03-19 07:10:01.722 INFO  (searcherExecutor-16-thread-1-processing-x:Combined) [   x:Combined] o.a.s.c.SolrCore [Combined]  Registered new searcher autowarm time: 0 ms
+2023-03-19 07:10:01.722 INFO  (searcherExecutor-17-thread-1-processing-x:Combined_reviews) [   x:Combined_reviews] o.a.s.c.SolrCore [Combined_reviews]  Registered new searcher autowarm time: 0 ms
+2023-03-19 07:10:02.116 INFO  (qtp1262607708-45) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1679209802077} status=0 QTime=4
+2023-03-19 07:10:02.116 INFO  (qtp1262607708-38) [   x:Combined_reviews] o.a.s.c.S.Request [Combined_reviews]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1679209802078&ts=1679209802078} status=503 QTime=2
+2023-03-19 07:10:02.120 INFO  (qtp1262607708-41) [   x:Combined_reviews] o.a.s.c.S.Request [Combined_reviews]  webapp=/solr path=/replication params={wt=json&command=details&_=1679209802107} status=0 QTime=8
+2023-03-19 07:10:02.121 INFO  (qtp1262607708-37) [   x:Combined_reviews] o.a.s.c.S.Request [Combined_reviews]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1679209802107} status=0 QTime=9
+2023-03-19 07:10:02.191 INFO  (qtp1262607708-44) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1679209802078} status=0 QTime=80
+2023-03-19 07:10:02.197 INFO  (qtp1262607708-66) [   x:Combined_reviews] o.a.s.c.S.Request [Combined_reviews]  webapp=/solr path=/admin/system params={wt=json&_=1679209802107} status=0 QTime=85
+2023-03-19 07:10:04.287 INFO  (qtp1262607708-41) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=29
+2023-03-19 07:10:05.908 INFO  (qtp1262607708-66) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} hits=5052 status=0 QTime=16
+2023-03-19 07:10:05.908 INFO  (qtp1262607708-66) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} status=0 QTime=17
+2023-03-19 07:10:05.928 INFO  (qtp1262607708-43) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/select params={q=title:"hammer"&rows=100&wt=json} hits=25 status=0 QTime=16
+2023-03-19 07:10:16.227 INFO  (qtp1262607708-68) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} hits=5052 status=0 QTime=1
+2023-03-19 07:10:16.227 INFO  (qtp1262607708-68) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} status=0 QTime=1
+2023-03-19 07:10:16.230 INFO  (qtp1262607708-66) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/select params={q=title:"hammer"&rows=100&wt=json} hits=25 status=0 QTime=0
+2023-03-19 07:12:18.888 INFO  (qtp1262607708-65) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} hits=5052 status=0 QTime=0
+2023-03-19 07:12:18.888 INFO  (qtp1262607708-65) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} status=0 QTime=0
+2023-03-19 07:12:18.891 INFO  (qtp1262607708-37) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/select params={q=title:"hammer"&rows=100&wt=json} hits=25 status=0 QTime=0
+2023-03-19 07:12:26.011 INFO  (qtp1262607708-39) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} hits=5052 status=0 QTime=0
+2023-03-19 07:12:26.011 INFO  (qtp1262607708-39) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} status=0 QTime=0
+2023-03-19 07:12:26.013 INFO  (qtp1262607708-66) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/select params={q=title:"hammer"&rows=100&wt=json} hits=25 status=0 QTime=0
+2023-03-19 07:12:33.728 INFO  (qtp1262607708-38) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} hits=5052 status=0 QTime=0
+2023-03-19 07:12:33.728 INFO  (qtp1262607708-38) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} status=0 QTime=0
+2023-03-19 07:12:33.730 INFO  (qtp1262607708-39) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/select params={q=title:"hammer"&rows=100&wt=json} hits=25 status=0 QTime=0
+2023-03-19 07:17:27.361 INFO  (qtp1262607708-74) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} hits=5052 status=0 QTime=0
+2023-03-19 07:17:27.361 INFO  (qtp1262607708-74) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} status=0 QTime=0
+2023-03-19 07:17:27.364 INFO  (qtp1262607708-41) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/select params={q=title:"hammer"&rows=100&wt=json} hits=25 status=0 QTime=0
+2023-03-19 07:17:55.343 INFO  (qtp1262607708-69) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} hits=5052 status=0 QTime=0
+2023-03-19 07:17:55.343 INFO  (qtp1262607708-69) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} status=0 QTime=0
+2023-03-19 07:17:55.349 INFO  (qtp1262607708-45) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/select params={q=title:*&rows=100&wt=json} hits=5049 status=0 QTime=3
+2023-03-19 07:18:07.042 INFO  (qtp1262607708-44) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} hits=5052 status=0 QTime=0
+2023-03-19 07:18:07.042 INFO  (qtp1262607708-44) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/admin/ping params={} status=0 QTime=0
+2023-03-19 07:18:07.044 INFO  (qtp1262607708-69) [   x:Combined] o.a.s.c.S.Request [Combined]  webapp=/solr path=/select params={q=title:*&rows=100&wt=json} hits=5049 status=0 QTime=0
