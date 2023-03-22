@@ -27,8 +27,9 @@ def search_results():
     description = request.args.get("description")
     category = request.args.get("category")
     rating = request.args.get("rating")
-    query['title'] = title if title else ""
-    # query['full_prod_description:'] = description if description else ""
+    # query["title"] = title if title else ""
+    query = "title: "+  title
+    # query['full_prod_description'] = description if description else ""
     # query['category'] = category if category else ""
     # query['rating'] = rating if rating else ""
     print("query", query)
