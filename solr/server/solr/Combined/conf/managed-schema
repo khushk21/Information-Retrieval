@@ -447,6 +447,7 @@
       <tokenizer class="solr.WhitespaceTokenizerFactory"/>
     </analyzer>
   </fieldType>
+  <field name="Unnamed__0" type="plongs"/>
   <field name="__CSV-File_created_with_merge-csv.com" type="text_general"/>
   <field name="_nest_path_" type="_nest_path_"/>
   <field name="_root_" type="string" indexed="true" stored="false" docValues="false"/>
@@ -467,6 +468,9 @@
   <field name="product_id" type="text_general"/>
   <field name="product_link" type="text_general"/>
   <field name="rating" type="pdoubles"/>
+  <field name="rating_rounded" type="plongs"/>
+  <field name="sentiment" type="plongs"/>
+  <field name="sentiment_word" type="text_general"/>
   <field name="title" type="text_general"/>
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
@@ -550,4 +554,5 @@
   <copyField source="manufacturer" dest="manufacturer_str" maxChars="256"/>
   <copyField source="__CSV-File_created_with_merge-csv.com" dest="__CSV-File_created_with_merge-csv.com_str" maxChars="256"/>
   <copyField source="category" dest="category_str" maxChars="256"/>
+  <copyField source="sentiment_word" dest="sentiment_word_str" maxChars="256"/>
 </schema>

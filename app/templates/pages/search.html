@@ -24,18 +24,20 @@
                         name="search"
                         type="text"
                         class="form-control"
-                        id="product_title"
+                        id="search"
+                        value="{{search}}"
                         placeholder="Search Product Title..."
                         required=""
                       />
                     </fieldset>
                   </div>
 
-                  <div class="col-md-6 second-item">
+                  <div class="col-md-3 second-item">
                     <fieldset>
                       <input
                         name="description"
                         type="text"
+                        value="{{description}}"
                         class="form-control"
                         id="description"
                         placeholder="Product Description..."
@@ -43,10 +45,25 @@
                     </fieldset>
                   </div>
                   <div class="col-md-3 second-item">
+                    <fieldset>
+                      <input
+                        name="length"
+                        type="number"
+                        class="form-control"
+                        id="product_length"
+                        placeholder="Number of products"
+                        value="{{length}}"
+                        required=""
+                      />
+                    </fieldset>
+                  </div>
+
+                  <div class="col-md-3 second-item">
                     <fieldset for="category">
                       <select
                         name="category"
                         id="category"
+                        value="{{category}}"
                         aria-label="Default select example"
                       >
                         <option value="">Select a Category</option>
@@ -68,39 +85,41 @@
                         name="rating"
                         id="rating"
                         aria-label="Default select example"
+                        value="{{rating}}"
                       >
                         <option value="">Select a Rating Value</option>
-                        <option value="1">1 star</option>
-                        <option value="2">2 stars</option>
-                        <option value="3">3 stars</option>
-                        <option value="4">4 stars</option>
-                        <option value="5">5 stars</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                       </select>
                     </fieldset>
                   </div>
+                  <div class="col-md-3 second-item">
+                    <fieldset for="sort">
+                      <select
+                        name="price"
+                        id="price"
+                        aria-label="Default select example"
+                        value="{{price}}"
+                      >
+                        <option value="">Sort By</option>
+                        <option value="3">Most Relevant</option>
+                        <option value="1">Price-Lowest to Highest</option>
+                        <option value="2">Price-Highest to Lowest</option>
+                      </select>
+                    </fieldset>
+                  </div>
+
                   <div class="col-md-3">
                     <fieldset>
                       <button type="submit" id="search" class="btn">
-                        <i class="material-icons">search</i>
+                        <i class="fa fa-search" style="font-size: 20px"></i>
                         Search Now
                       </button>
                     </fieldset>
                   </div>
-                </div>
-                <div
-                  class="blue-button"
-                  id="form-submit"
-                  name="search"
-                  action="/searchResults"
-                  method="get"
-                >
-                  {% if suggestions %} Did you mean
-                  <a
-                    href="/searchResults?search={{suggestions[0].word}}&{{countries}}"
-                  >
-                    {{suggestions[0].word}}</a
-                  >
-                  {% endif %}
                 </div>
               </form>
             </div>
@@ -118,7 +137,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="section-heading">
-          <span>Search Results for query</span>
+          <span>Search Results for query in about {{total_time}} seconds</span>
         </div>
       </div>
     </div>
@@ -129,30 +148,154 @@
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         display: flex;
-        padding: 10px;
+        padding: 60px;
+        margin-bottom: 10px;
       "
     >
       <img
-        src="https://via.placeholder.com/150x150"
+        src="{{product.image_url}}"
         alt="Product Image"
-        style="margin-right: 10px"
+        style="margin-right: 10px; width: 250px; height: 250px"
       />
       <div style="flex: 1">
-        <h3 style="font-size: 20px; margin: 0">Product Title</h3>
-        <p style="color: #666">Product Description</p>
-        <div style="margin-top: 10px">
-          <h4 style="font-size: 16px; margin: 0">Customer Reviews:</h4>
+        <h3
+          style="
+            font-size: 20px;
+            margin-bottom: 5px;
+            font-family: Times New Roman;
+          "
+        >
+          <a href="{{product.product_link}}">{{product.title}}</a>
+        </h3>
+        <h4
+          style="
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-family: Times New Roman;
+          "
+        >
+          ${{product.price}}
+        </h4>
+        <h4
+          style="
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-family: Times New Roman;
+          "
+        >
+          {{product.category}}
+        </h4>
+        <h4
+          style="
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-family: Times New Roman;
+          "
+        >
+          {% if product.rating != 'Not Rated Yet' %} {% for star in range(1,
+          product.rating +1)%}
+          <i class="fa fa-star" style="color: orange"></i>
+          {% endfor %} {% for star in range(5-product.rating) %}
+          <i class="fa fa-star"></i>
+          {% endfor %} {% endif %}
+        </h4>
+        <h4 style="margin-bottom: 5px">
+          {% if product.sentiment == 'Positive' %}
+          <span class="material-icons" style="color: green; font-size: 32px"
+            >sentiment_very_satisfied</span
+          >
+          {% elif product.sentiment == 'Negative' %}
+          <span
+            class="material-icons"
+            style="color: lightcoral; font-size: 32px"
+            >sentiment_very_dissatisfied</span
+          >
+          {% elif product.sentiment == 'Neutral' %}
+          <span
+            class="material-icons"
+            style="color: lightsalmon; font-size: 32px"
+            >sentiment_neutral</span
+          >
+          {% endif %}
+        </h4>
+        <p style="color: #666">{{product.full_prod_description}}</p>
+        <div style="margin-top: 2px">
+          {% if product.reviews%}
+          <h2
+            style="
+              font-size: 20px;
+              margin-bottom: 5px;
+              font-family: Times New Roman;
+              font-weight: 600;
+            "
+          >
+            Customer Reviews:
+          </h2>
           <ul style="list-style: none; margin: 0; padding: 0">
-            <li style="margin-bottom: 5px">Review 1</li>
-            <li style="margin-bottom: 5px">Review 2</li>
-            <li style="margin-bottom: 5px">Review 3</li>
+            {% for review in product.reviews %}
+
+            <li style="margin-bottom: 5px; font-family: Times New Roman">
+              <h2 style="font-size: 16px; font-family: Times New Roman">
+                {% for star in range(1, review.review_rating +1)%}
+                <i class="fa fa-star" style="color: orange"></i>
+                {% endfor %} {% for star in range(5-review.review_rating) %}
+                <i class="fa fa-star"></i>
+                {% endfor %}
+                <a href="{{review.review_url}}" style="padding-left: 5px"
+                  >{{review.review_title}}</a
+                >
+              </h2>
+            </li>
+            <li style="font-family: Times New Roman">
+              <p style="color: #666; margin-bottom: 0; padding-bottom: 0">
+                {{review.date_country}}
+              </p>
+            </li>
+
+            <li style="font-family: Times New Roman">
+              <h4
+                style="
+                  font-size: 16px;
+                  font-family: Times New Roman;
+                  padding-bottom: 25px;
+                "
+              >
+                {{review.review_content}}
+              </h4>
+            </li>
+            {% endfor %}
           </ul>
+          {% endif %}
         </div>
       </div>
     </div>
 
     {% endfor %} {% else %}
-    <div>{{error}}</div>
+    <div
+      class="section-heading"
+      style="padding-top: 0px; font-size: 28px; color: #4883ff"
+    >
+      {{error}}
+      <div
+        id="form-submit"
+        name="search"
+        action="/searchResults"
+        method="get"
+        style="font-size: 28px; color: #4883ff"
+      >
+        {% if suggestions %} Did you mean {% for suggestion in suggestions[:5]
+        %}
+        <span
+          ><a
+            href="http://127.0.0.1:8000/searchResults?search={{suggestion.word}}&length={{length}}&price={{price}}&category={{category}}&rating={{rating}}"
+            style="font-size: 20px; display: inline"
+          >
+            {{suggestion.word}}</a
+          ></span
+        >
+        {% endfor %} {% endif %}
+      </div>
+    </div>
     {% endif %}
   </div>
 </section>

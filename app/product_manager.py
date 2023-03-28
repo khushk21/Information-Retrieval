@@ -9,7 +9,9 @@
 #query = 'category: "DIY_Tools"'
 
 
+from unicodedata import category
 import pysolr
+import requests
 
 class CombinedQueryManager:
     # Create a client instance. The timeout and authentication options are not required.
@@ -31,9 +33,9 @@ class CombinedQueryManager:
         return response
 
     @staticmethod
-    def search(query,numOfResults):
+    def search(query,numOfResults, fq):
         try:
-            results = CombinedQueryManager.solr.search(query, rows = numOfResults)
+            results = CombinedQueryManager.solr.search(query,fq=fq, rows = numOfResults)
         except:
             print("Error")
             return []
@@ -41,9 +43,9 @@ class CombinedQueryManager:
         return response
 
     @staticmethod
-    def byTopic(query, topic):
+    def byCategory(query, category, numOfResults):
         try:
-            results = CombinedQueryManager.solr.search(query, fq=f"topic:{topic}", rows=100)
+            results = CombinedQueryManager.solr.search(query, fq=f"category:{category}", rows=numOfResults)
         except:
             print("Error")
             return []
@@ -59,3 +61,19 @@ class CombinedQueryManager:
             return []
         response = list(map(lambda x: x, results))
         return response
+    
+    @staticmethod
+    def spell_check(query):
+        try:
+            url = f"http://localhost:8983/solr/Combined/spell?spellcheck.q={query}&spellcheck=true"
+            response = requests.get(url)
+            suggestions = response.json()["spellcheck"]["suggestions"][1]["suggestion"]
+            if len(suggestions)>0:
+                suggestions = sorted(suggestions, key=lambda x: x['freq'], reverse=True)
+            print("s", suggestions)
+        
+        except:
+           print("Error in getting spell check suggestions")
+           return []
+        
+        return suggestions
