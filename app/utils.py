@@ -9,6 +9,12 @@ sentiment = {1: "Negative", 2: "Negative", 3: "Neutral", 4: "Positive", 5: "Posi
 def clean_search_result(results, query=None, sort_filter=None):
     products = []
     for result in results:
+        if sort_filter == '4':
+            if result['rating'][0]<3:
+                continue
+        elif sort_filter == '5':
+            if result['rating'][0]>3:
+                continue
         product = dict()
         raw_reviews = CombinedReviewQueryManager.byPID(PID=result['product_id'][0])
         cleaned_reviews = clean_reviews(raw_reviews)
@@ -79,10 +85,10 @@ def clean_reviews(reviews):
 
 def rank_products(query, products):
     try:
-        product_description = [product['full_prod_description'] for product in products]
+        product_title_description = [product['title']+" "+product['full_prod_description'] for product in products]
         vectorizer = TfidfVectorizer()
-        description = product_description.copy()
-        description.insert(0, query)
+        description = product_title_description.copy()
+        description.insert(0, query['title']+" "+query['description'])
         vectors = vectorizer.fit_transform(description)
         feature_names = vectorizer.get_feature_names()
         dense = vectors.todense().tolist()

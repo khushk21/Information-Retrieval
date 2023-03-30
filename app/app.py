@@ -44,7 +44,7 @@ def search_results():
     start_time = time.time()
     results = CombinedQueryManager.search(query=query,numOfResults=numOfResults, fq=fq)
     if sort_filter:
-        products = clean_search_result(results=results,query=query, sort_filter=sort_filter)
+        products = clean_search_result(results=results,query={"title": title, "description":description}, sort_filter=sort_filter)
     else:
         products = clean_search_result(results=results)
     
