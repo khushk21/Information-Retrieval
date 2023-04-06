@@ -2,8 +2,6 @@
 
 CZ4034 - Information Retrieval
 
-![](./assets/amazon-logo.png)
-
 Search Engine for Amazon Products
 
 This project contains 3 main sections
